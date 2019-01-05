@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="./css/master.css">
+  </head>
+  <body>
+    <!-- Minesweeper goes here -->
+    <div id="game" class="minesweeper">
+      <div>
+          <h2>
+              <span>Your time:</span>
+              <span class="timer">0</span>
+          </h2>
+      </div>
+      <div>
+          <span>Level:</span>
+          <select class="level">
+              <option value="easy">Easy</option>                  <!-- 7x7 -->
+              <option value="beginner">Beginner</option>          <!-- 9x9 -->
+              <option value="intermediate">Intermediate</option>  <!-- 12x12 -->
+              <option value="advanced">Advanced</option>          <!-- 16x16x-->
+          </select>
+          <button class="newGame" type="button">New game</button>
+      </div>
+      <div class="board"></div>
+    </div>
+  </body>
+  <footer>
+    <script src="./js/minesweeper.js" charset="utf-8"></script>
+  </footer>
+</html>
