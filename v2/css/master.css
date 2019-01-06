@@ -1,0 +1,30 @@
+
+
+/* Board*/
+.field {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  float: left;
+  background-color: white;
+
+}
+
+
+.hidden {
+  /* background-color: tan; */
+  /* Add code to make retro 3D background from original Minesweeper*/
+  background-image: url('../img/sprite_hidden_40_40.png');
+}
+
+.mine {
+  background-image: url('../img/sprite_mine_40_40.png');
+}
+
+.clear {
+  clear: both;
+}
+
+.boom {
+
+}

@@ -10,10 +10,11 @@
 
 }
 
+
 .hidden {
   /* background-color: tan; */
   /* Add code to make retro 3D background from original Minesweeper*/
-
+  background-image: url('../img/sprite_hidden_40_40.png');
 }
 
 .mine {
@@ -22,4 +23,8 @@
 
 .clear {
   clear: both;
+}
+
+.boom {
+
 }
