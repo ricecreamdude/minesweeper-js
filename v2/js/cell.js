@@ -1,12 +1,14 @@
-function Cell (x,y){
+function Cell (i,j){
   this.bee = true;
   this.revealed = true;
   this.w = w;
-  this.x = x;
-  this.y = y;
+  this.i = i;
+  this.j = j;
+  this.x = i * w;
+  this.y = j * w;
 
   //Randomly generate bees
-  if (random(1) <0.2) {
+  if (random(1) <0.3) {
     this.bee = true;
   } else {
     this.bee = false;
@@ -25,6 +27,21 @@ Cell.prototype.show = function() {
     }
   }
 }
+//
+// Cell.prototype.countBees = function(){
+//   if (this.bee){
+//     return -1
+//   }
+//
+//   let total = 0;
+//
+//   for (var i = -1; i <= 1; i++){
+//     for (var j = ; j ; j++) {
+//
+//     }
+//   }
+//
+// }
 
 //Does the cell contain where the mouse is clicked?
 Cell.prototype.contains = function(x,y){

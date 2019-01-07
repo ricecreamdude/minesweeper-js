@@ -2,7 +2,16 @@
 var grid;
 var cols = 20;
 var rows = 20;
-var w = 20
+var w = 40
+var hidden, mine, redmine;
+
+//This code is supposed to load the sprites I created but does not seem to work
+//on local browsers
+// function preload(){
+//   hidden = loadImage('./img/sprite_hidden_40_40.png');
+//   mine = loadImage('./img/sprite_mine_40_40.png');
+//   redMine= loadImage('./img/sprite_redmine_40_40.png');
+// }
 
 //P5.js setup so that we can use its 'onclick' functionality
 function setup(){
@@ -16,7 +25,7 @@ function setup(){
   grid = make2DArray(cols, rows);
   for (var i = 0; i < cols; i++){
     for (var j = 0; j < rows; j++){
-      grid[i][j] = new Cell( i * w, j * w);
+      grid[i][j] = new Cell(i, j);
     }
   }
 }
