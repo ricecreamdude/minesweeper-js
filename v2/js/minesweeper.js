@@ -1,13 +1,8 @@
-
+'use strict'
 var grid;
 var cols = 20;
 var rows = 20;
 var w = 40
-
-
-
-// var hidden, mine, redmine;
-
 //This code is supposed to load the sprites I created but does not seem to work
 //on local browsers
 // function preload(){
@@ -18,8 +13,7 @@ var w = 40
 
 //P5.js setup so that we can use its 'onclick' functionality
 function setup(){
-  createCanvas(601,401);
-
+  createCanvas(1001,601);
   //Calculate the number of cells to use,
   //Width and Height vars are instantiated via createCanvas
   cols = floor(width / w);
@@ -39,6 +33,7 @@ function draw(){
   for (var i = 0; i < cols; i++){
     for (var j = 0; j < rows; j++){
       grid[i][j].show();
+      grid[i][j].countBees();
     }
   }
 }
@@ -47,7 +42,6 @@ function mousePressed(){
   for (var i = 0; i < cols; i++){
     for (var j = 0; j < rows; j++){
       if (grid[i][j].contains(mouseX, mouseY)){
-        grid[i][j].countBees();
         grid[i][j].reveal()
       }
     }
