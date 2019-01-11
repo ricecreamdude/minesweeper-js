@@ -11,7 +11,7 @@ function Cell (col,row){
   this.y = row * w;
 
   //Randomly generate bees
-  if (random(1) <0.1) {
+  if (random(1) < setup_mineProb) {
     this.bee = true;
   } else {
     this.bee = false;
@@ -68,13 +68,28 @@ Cell.prototype.countBees = function(){
 }
 
 //Calculate if X,Y of mouse click lies within range of cell
+//Wil control many functions ran at reveal:
+//      #Reveal Current Cell
+//      #Reveal Neighbors
+//      #If bomb clicked, end game
 Cell.prototype.contains = function(x,y){
   return (x > this.x && x < this.x + this.w && y > this.y && y < this.y + this.w)
 }
 Cell.prototype.reveal = function(){
   background(10);
-  this.revealed = true;
-  //Logic to reveal all cells connected with no mines nearby
+  if(this.bee && !blownUp){
+    this.endGame();
+    this.revealed=true;
+  }
+  if (!blownUp){
+    this.revealed = true;
+    this.revealNeighbors();
+  }
+}
+
+//Add a function to reveal neighbors
+//Logic to reveal all cells connected with no mines nearby
+Cell.prototype.revealNeighbors = function(){
   if (this.neighborCount === 0){
     let cl, rw;
     cl = this.col + 1;
@@ -95,4 +110,12 @@ Cell.prototype.reveal = function(){
       }
     }
   }
+}
+
+
+//Add a function to end game
+
+Cell.prototype.endGame = function(){
+  revealMines();
+  blownUp = 1;
 }
